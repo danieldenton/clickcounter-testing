@@ -39,3 +39,11 @@ test("clicking button increments the counter", () => {
   const count = findByTestAtt(wrapper, "count").text();
   expect(count).toBe("1");
 });
+
+test("clicking button decrements the counter", () => {
+  const wrapper = setup();
+  const button = findByTestAtt(wrapper, "decrement-button");
+  button.simulate("click");
+  const count = findByTestAtt(wrapper, "count").text();
+  expect(count).toBe("-1");
+});
