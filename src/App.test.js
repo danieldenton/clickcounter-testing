@@ -44,6 +44,6 @@ test("clicking button decrements the counter", () => {
   const wrapper = setup();
   const button = findByTestAtt(wrapper, "decrement-button");
   button.simulate("click");
-  const count = findByTestAtt(wrapper, "count").text();
-  expect(count).toBe("-1");
+  const error = findByTestAtt(wrapper, "error").text();
+  expect(error).toBe("You cannot decrement the count below 0");
 });
